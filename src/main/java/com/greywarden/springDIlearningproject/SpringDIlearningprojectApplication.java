@@ -16,8 +16,8 @@ public class SpringDIlearningprojectApplication {
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
-		String salve = myController.sayHello();
-		System.out.println(salve);
+		System.out.println("--------------> Primary");
+		System.out.println(myController.sayHello());
 
 		System.out.println("--------------> Property");
 		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) ctx.getBean(
