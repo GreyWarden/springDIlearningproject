@@ -3,9 +3,9 @@ package com.greywarden.springDIlearningproject.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public final class GreetingServiceImpl implements GreetingService {
+public final class PropertyGreetingService implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Salve a tutti";
+        return "Salve a tutti from property";
     }
 }

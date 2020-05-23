@@ -1,10 +1,8 @@
 package com.greywarden.springDIlearningproject.controllers;
 
-import com.greywarden.springDIlearningproject.services.GreetingServiceImpl;
+import com.greywarden.springDIlearningproject.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterInjectedControllerTest {
 
@@ -12,7 +10,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         this.controller = new SetterInjectedController();
-        this.controller.setGreetingService(new GreetingServiceImpl());
+        this.controller.setGreetingService(new ConstructorGreetingService());
     }
 
     @Test
