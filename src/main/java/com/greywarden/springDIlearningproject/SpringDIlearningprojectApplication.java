@@ -1,9 +1,6 @@
 package com.greywarden.springDIlearningproject;
 
-import com.greywarden.springDIlearningproject.controllers.ConstructorInjectedController;
-import com.greywarden.springDIlearningproject.controllers.MyController;
-import com.greywarden.springDIlearningproject.controllers.PropertyInjectedController;
-import com.greywarden.springDIlearningproject.controllers.SetterInjectedController;
+import com.greywarden.springDIlearningproject.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -37,6 +34,12 @@ public class SpringDIlearningprojectApplication {
 				"constructorInjectedController"
 		);
 		System.out.println(constructorInjectedController.getGreeting());
+
+		System.out.println("----------> i18n");
+		I18nController i18nController = (I18nController) ctx.getBean(
+				"i18nController"
+		);
+		System.out.println(i18nController.saySalve());
 	}
 
 }
