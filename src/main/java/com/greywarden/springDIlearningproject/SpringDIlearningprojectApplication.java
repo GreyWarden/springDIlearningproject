@@ -1,6 +1,7 @@
 package com.greywarden.springDIlearningproject;
 
 import com.greywarden.springDIlearningproject.controllers.*;
+import com.greywarden.springDIlearningproject.examplebeans.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -40,6 +41,12 @@ public class SpringDIlearningprojectApplication {
 				"i18nController"
 		);
 		System.out.println(i18nController.saySalve());
+
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+
+		System.out.println(fakeDataSource.getUser());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getUrl());
 	}
 
 }
