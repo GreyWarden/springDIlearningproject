@@ -2,25 +2,13 @@ package com.greywarden.springDIlearningproject.config;
 
 import com.greywarden.springDIlearningproject.examplebeans.FakeDataSource;
 import com.greywarden.springDIlearningproject.examplebeans.FakeJmsBroker;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
 public class PropertyConfig {
-
-    @Autowired
-    Environment env;
-
     @Value("${agora.username}")
     String user;
     @Value("${agora.password}")
@@ -38,7 +26,7 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUser(env.getProperty("AGORA.USER"));
+        fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
         return fakeDataSource;
