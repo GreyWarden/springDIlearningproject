@@ -1,0 +1,6 @@
+#JMS Properties
+agora:
+  jms:
+    username: TGreyWarden
+    password: password
+    url: "http://fake.url.es"
