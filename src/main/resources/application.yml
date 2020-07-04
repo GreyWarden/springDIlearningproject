@@ -4,3 +4,19 @@ agora:
     username: TGreyWarden
     password: password
     url: "http://fake.url.es"
+
+---
+spring:
+  profiles: EN
+
+#Datasource Properties
+agora:
+  username: GreyWardenEN
+  password: passEN
+  url: http://fake.url.de
+  jms:
+    username: TGreyWardenEN
+    password: passwordEN
+    url: "http://fake.url.uk"
+
+
